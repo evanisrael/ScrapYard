@@ -64,7 +64,8 @@ namespace ScrapYard
         /// <param name="type">The type of message being logged (severity)</param>
         internal static void Log(object msg, LogType type = LogType.INFO)
         {
-            string final = "[ScrapYard] " + msg?.ToString();
+            string final = "[ScrapYard] " + msg??"<null>".ToString();
+            // string final = "[ScrapYard] " + msg?.ToString();
             if (type == LogType.INFO)
             {
                 Debug.Log(final);
